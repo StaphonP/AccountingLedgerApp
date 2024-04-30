@@ -1,26 +1,15 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class depositInfo {
-private String item;
-private String vendor;
-private double amount = 0.0;
+public class Payments {
+    private String item;
+    private String paidTo;
+    private double amount;
 
-
-    public depositInfo(String item, String vendor, double amount) {
+    public Payments(String item, String paidTo, double amount){
         this.item = item;
-        this.vendor = vendor;
-        this.amount = 0.0;
-
-    }
-
-    @Override
-    public String toString() {
-        return "Accounting{" +
-                "item='" + item + '\'' +
-                ", vendor='" + vendor + '\'' +
-                ", amount=" + amount +
-                '}';
+        this.paidTo = paidTo;
+        this.amount = amount;
     }
 
     public double getAmount() {
@@ -31,12 +20,12 @@ private double amount = 0.0;
         this.amount = amount;
     }
 
-    public String getVendor() {
-        return vendor;
+    public String getPaidTo() {
+        return paidTo;
     }
 
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
+    public void setPaidTo(String paidTo) {
+        this.paidTo = paidTo;
     }
 
     public String getItem() {
@@ -51,5 +40,14 @@ private double amount = 0.0;
         DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-mm-dd|hh:mm:ss");
         String formattedDateTime = today.format(formatter);
         return formattedDateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Payments{" +
+                "item='" + item + '\'' +
+                ", paidTo='" + paidTo + '\'' +
+                ", amount=" + amount +
+                '}';
     }
 }
