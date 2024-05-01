@@ -48,7 +48,7 @@ private double amount = 0.0;
     }
     public String getDateTime() {
         LocalDateTime today = LocalDateTime.now();
-        DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-mm-dd|hh:mm:ss");
+        DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-MM-dd|hh:mm:ss");
         String formattedDateTime = today.format(formatter);
         return formattedDateTime;
     }
